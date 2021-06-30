@@ -1,0 +1,23 @@
+{
+  "name": "core",
+  "version": "0.0.0",
+  "description": "脚手架核心模块",
+  "author": "liyanjun <254948133@qq.com>",
+  "homepage": "",
+  "license": "ISC",
+  "main": "lib/core.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "n"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  }
+}
