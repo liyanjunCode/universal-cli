@@ -1,5 +1,5 @@
 {
-  "name": "core",
+  "name": "@universal-cli/core",
   "version": "0.1.0",
   "description": "脚手架核心模块",
   "author": "liyanjun <254948133@qq.com>",
