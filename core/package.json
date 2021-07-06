@@ -28,8 +28,8 @@
     "access": "public"
   },
   "dependencies": {
-    "@universal-cli/command": "file:../command",
-    "@universal-cli/util": "file:../util",
+    "@universal-cli/command": "file:../../commands/commands",
+    "@universal-cli/util": "file:../../utils/log",
     "homedir": "^0.6.0",
     "import-local": "^3.0.2",
     "npmlog": "^4.1.2",

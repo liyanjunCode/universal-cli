@@ -1,0 +1,30 @@
+{
+  "name": "@universal-cli/modles",
+  "version": "0.1.4",
+  "description": "universal-cli models",
+  "keywords": [
+    "universal-cli",
+    "models"
+  ],
+  "author": "liyanjun <254948133@qq.com>",
+  "homepage": "https://github.com/liyanjunCode/universal-cli#readme",
+  "license": "ISC",
+  "main": "lib.index.html\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[C\u001b[C\u001b[C\u001b[C\u001b[js\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[/",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/liyanjunCode/universal-cli.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/liyanjunCode/universal-cli/issues"
+  }
+}
