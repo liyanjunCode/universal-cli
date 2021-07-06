@@ -1,0 +1,38 @@
+{
+  "name": "@universal-cli/core",
+  "version": "0.1.4",
+  "description": "脚手架核心模块",
+  "author": "liyanjun <254948133@qq.com>",
+  "homepage": "",
+  "license": "ISC",
+  "main": "lib/core.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "bin": {
+    "uni": "./bin/index.js"
+  },
+  "files": [
+    "lib"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "n"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "gitHead": "90a953d522bd21667eee1e206c7296630b7f2a4a",
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@universal-cli/commands": "file:../../commands/commands",
+    "@universal-cli/log": "file:../../utils/log",
+    "homedir": "^0.6.0",
+    "import-local": "^3.0.2",
+    "npmlog": "^4.1.2",
+    "root-check": "^2.0.0"
+  }
+}
