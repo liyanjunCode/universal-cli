@@ -37,7 +37,6 @@ function checkNodeVersion(){
 // 查看用户权限并更改， 防止用户使用管理员权限导致不兼容
 function checkUserRoot(){
     const rootCheck = require("root-check");
-    console.log(rootCheck,"rootCheckrootCheckrootCheck")
     rootCheck();
 }
 //  获取用户主目录, 主要是为了向主目录中写入缓存
