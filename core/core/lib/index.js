@@ -4,6 +4,9 @@ const log = require("@universal-cli/log");
 const semver = require("semver");
 const colors = require("colors/safe");
 const { NODE_LOWER_VERSION } = require("./const");
+const { getNpmInfo, getVersions, getLatestVersion } = require('@universal-cli/get-npm-info');
+
+
 let userHome;
 function core() {
     // 1. 前期准备工作
@@ -22,6 +25,8 @@ function prepare(){
     checkNodeVersion();
     checkUserRoot();
     checkUserHome();
+    checkArgs();
+    checkVersion();
 }
 // 检查脚手架当前版本
 function checkUniVersion() {
@@ -37,12 +42,30 @@ function checkNodeVersion(){
 // 查看用户权限并更改， 防止用户使用管理员权限导致不兼容
 function checkUserRoot(){
     const rootCheck = require("root-check");
-    rootCheck();
+    rootCheck(); 
 }
 //  获取用户主目录, 主要是为了向主目录中写入缓存
 function checkUserHome(){
     userHome = require("homedir")();
     
     log.info("用户主目录", userHome);
+}
+// 解析参数
+function checkArgs(){
+    const args = require("minimist")(process.argv.slice(2));
+    args.debug && (log.level = "verbose");
+    log.verbose("111", "2222")
+}
+
+async function checkVersion(){
+    const pkgName = pkg.name;
+    const pkgVersion = pkg.version;
+    const pkgInfo = await getNpmInfo(pkgName);
+    const versions = getVersions(pkgInfo.versions);
+    
+    versions.filter(version => semver.satisfies(version, `>${pkgVersion}`)).sort((a, b) => semver.gt(a, b) ? -1 : 1);
+    console.log(versions,"versions")
+    const latestVersion = getLatestVersion(versions);
+    console.log(latestVersion)
 }
 module.exports = core;

@@ -30,9 +30,11 @@
   "dependencies": {
     "@universal-cli/commands": "file:../../commands/commands",
     "@universal-cli/log": "file:../../utils/log",
+    "@universal-cli/get-npm-info": "file:../../utils/get-npm-info",
     "colors": "^1.4.0",
     "homedir": "^0.6.0",
     "import-local": "^3.0.2",
+    "minimist": "^1.2.5",
     "npmlog": "^4.1.2",
     "root-check": "^1.0.0",
     "semver": "^7.3.5"
