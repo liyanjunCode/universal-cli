@@ -1,0 +1,29 @@
+{
+  "name": "@universal-cli/get-npm-info",
+  "version": "0.1.4",
+  "description": "获取在npm的版本信息",
+  "author": "liyanjun <254948133@qq.com>",
+  "homepage": "https://github.com/liyanjunCode/universal-cli#readme",
+  "license": "ISC",
+  "main": "lib/index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/liyanjunCode/universal-cli.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/liyanjunCode/universal-cli/issues"
+  },
+  "dependencies": {
+    "axios": "^0.21.1"
+  }
+}
