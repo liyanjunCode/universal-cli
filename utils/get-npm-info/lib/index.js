@@ -1,5 +1,6 @@
 'use strict';
 const axios = require("axios");
+const semver = require("semver");
 
 async function getNpmInfo(pkgName, origin) {
     if(!pkgName) {
@@ -26,7 +27,7 @@ async function getNpm(register) {
     return null;
 }
 function getVersions(versionData){
-    return versionData ? ["1.1.5","0.1.5","1.2.5", ...Object.keys(versionData), "0.1.3","0.1.2","0.1.0"] : [];
+    return versionData ? [...Object.keys(versionData)] : [];
 }
 function getLatestVersion(versions){
     if(versions && versions.length > 0) {
@@ -34,8 +35,14 @@ function getLatestVersion(versions){
     }
     return null;
 }
+function getFilterFile(versions, baseVersion) {
+ return versions
+   .filter((version) => semver.satisfies(version, `>${baseVersion}`))
+   .sort((a, b) => (semver.gt(a, b) ? -1 : 1));
+}
 module.exports = {
-    getNpmInfo,
-    getVersions,
-    getLatestVersion
+  getNpmInfo,
+  getVersions,
+  getLatestVersion,
+  getFilterFile,
 };
