@@ -1,6 +1,6 @@
 {
   "name": "@universal-cli/log",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "universal-cli log",
   "keywords": [
     "通用脚手架打log"

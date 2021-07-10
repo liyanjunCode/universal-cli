@@ -1,6 +1,6 @@
 {
   "name": "@universal-cli/get-npm-info",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "获取在npm的版本信息",
   "author": "liyanjun <254948133@qq.com>",
   "homepage": "https://github.com/liyanjunCode/universal-cli#readme",
