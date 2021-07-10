@@ -15,7 +15,7 @@ const {
 } = require("@universal-cli/get-npm-info");
 
 function core() {
-    // 1. 前期准备工作
+    // 1. 前期准备
     try{
         prepare();
     } catch(err) {
