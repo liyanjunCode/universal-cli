@@ -25,7 +25,7 @@ function core() {
     // 3. 命令执行
    
 }
-//  脚手架环境准备工作1
+//  脚手架环境准备工作
 function prepare(){
     checkUniVersion();
     checkNodeVersion();
