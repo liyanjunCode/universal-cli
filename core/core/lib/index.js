@@ -4,6 +4,8 @@ const pkg = require("../package.json")
 const log = require("@universal-cli/log");
 const semver = require("semver");
 const colors = require("colors/safe");
+const { Command } = require("commander");
+
 const { NODE_LOWER_VERSION, DEFAULT_CLI_HOME } = require("./const");
 const pathExists = require("path-exists").sync;
 const userHome = require("homedir")();
@@ -18,11 +20,14 @@ function core() {
     // 1. 脚手架环境准备
     try{
         prepare();
+         // 2. 命令注册
+        registerCommand();
+        // 3. 命令执行
     } catch(err) {
         console.log(err)
     }
-    // 2. 命令注册
-    // 3. 命令执行
+   
+    
    
 }
 //  脚手架环境准备工作
@@ -34,6 +39,14 @@ function prepare(){
     checkArgs();
     getDotEnv();
     checkVersion();
+}
+// 命令注册
+function registerCommand() {
+    const program = new Command();
+    program.name("universal-cli").usage("command [options]").
+    version(pkg.version).
+    option("-h, --help", "帮助信息").
+    parse(process.argv)
 }
 // 检查脚手架当前版本
 function checkUniVersion() {

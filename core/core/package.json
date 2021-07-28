@@ -32,6 +32,7 @@
     "@universal-cli/get-npm-info": "file:../../utils/get-npm-info",
     "@universal-cli/log": "file:../../utils/log",
     "colors": "^1.4.0",
+    "commander": "^8.0.0",
     "dotenv": "^10.0.0",
     "homedir": "^0.6.0",
     "import-local": "^3.0.2",
