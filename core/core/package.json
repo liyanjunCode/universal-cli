@@ -23,14 +23,14 @@
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1"
   },
-  "gitHead": "90a953d522bd21667eee1e206c7296630b7f2a4a",
+  "gitHead": "6939c5ba5993a493ba041a64e41030a44f4bb123",
   "publishConfig": {
     "access": "public"
   },
   "dependencies": {
-    "@universal-cli/commands": "file:../../commands/commands",
-    "@universal-cli/get-npm-info": "file:../../utils/get-npm-info",
-    "@universal-cli/log": "file:../../utils/log",
+    "@universal-cli/commands": "^0.1.11",
+    "@universal-cli/get-npm-info": "^0.1.11",
+    "@universal-cli/log": "^0.1.11",
     "colors": "^1.4.0",
     "commander": "^8.0.0",
     "dotenv": "^10.0.0",

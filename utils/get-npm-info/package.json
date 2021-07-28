@@ -26,5 +26,9 @@
   "dependencies": {
     "axios": "^0.21.1",
     "semver": "^7.3.5"
-  }
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "gitHead": "6939c5ba5993a493ba041a64e41030a44f4bb123"
 }
