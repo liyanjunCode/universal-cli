@@ -43,10 +43,35 @@ function prepare(){
 // 命令注册
 function registerCommand() {
     const program = new Command();
-    program.name("universal-cli").usage("command [options]").
+    program.name(Object.keys(pkg.bin)[0]).usage("command [options]").
     version(pkg.version).
-    option("-h, --help", "帮助信息").
-    parse(process.argv)
+    option("-tp, --targetPath", "本地初始化init路径", "").
+    option("-d, --debug", "是否开启调试模式", false);
+  
+   
+    program.command('init [projectName]').option("-f --force", "强制清空文件夹", false).action(() => {
+        // console.log(a, "aaa")
+        console.log(9999)
+        console.log(program.opts(), "process.argv")
+    })
+
+    program.on('options:debug', function(){
+        console.log('options:debug')
+    })
+
+    program.on('options:targetPath', function(){
+        console.log('options:targetPath')
+    })
+    
+    program.on('command:*', function (operands) {
+        console.error(`error: unknown command '${operands[0]}'`);
+        const availableCommands = program.commands.map(cmd => cmd.name());
+        mySuggestBestMatch(operands[0], availableCommands);
+        process.exitCode = 1;
+    });
+
+    // 必须放到最后， 相当于结束
+    program.parse(process.argv);
 }
 // 检查脚手架当前版本
 function checkUniVersion() {
