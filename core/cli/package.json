@@ -31,6 +31,7 @@
     "@universal-cli/commands": "^0.1.12",
     "@universal-cli/get-npm-info": "^0.1.12",
     "@universal-cli/log": "^0.1.12",
+    "@universal-cli/exec": "file:../exec",
     "colors": "^1.4.0",
     "commander": "^8.0.0",
     "dotenv": "^10.0.0",

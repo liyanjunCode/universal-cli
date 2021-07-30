@@ -2,6 +2,7 @@
 const path = require("path");
 const pkg = require("../package.json")
 const log = require("@universal-cli/log");
+const exec = require("@universal-cli/exec");
 const semver = require("semver");
 const colors = require("colors/safe");
 const { Command } = require("commander");
@@ -15,6 +16,7 @@ const {
   getLatestVersion,
   getFilterFile,
 } = require("@universal-cli/get-npm-info");
+const { Console } = require("console");
 
 function core() {
     // 1. 脚手架环境准备
@@ -49,25 +51,29 @@ function registerCommand() {
     option("-d, --debug", "是否开启调试模式", false);
   
    
-    program.command('init [projectName]').option("-f --force", "强制清空文件夹", false).action(() => {
-        // console.log(a, "aaa")
-        console.log(9999)
-        console.log(program.opts(), "process.argv")
+    program.command('init [projectName]').option("-f --force", "强制清空文件夹", false).action(exec)
+
+    program.on('option:debug', function(a,b,c){
+        const opts = program.opts();
+        if(opts.debug) {
+            process.env.LOG_LEVEL = "verbose"
+        } else {
+            process.env.LOG_LEVEL = "info"
+        }
+        log.level = "verbose";
     })
 
-    program.on('options:debug', function(){
-        console.log('options:debug')
-    })
-
-    program.on('options:targetPath', function(){
-        console.log('options:targetPath')
+    program.on('option:targetPath', function(){
+        const opts = program.opts();
+        process.env.CLI_TARGET_PATH = opts.targetPath;
     })
     
     program.on('command:*', function (operands) {
-        console.error(`error: unknown command '${operands[0]}'`);
         const availableCommands = program.commands.map(cmd => cmd.name());
-        mySuggestBestMatch(operands[0], availableCommands);
-        process.exitCode = 1;
+        console.log(colors.red(`未知命令${operands[0]}`));
+        if(availableCommands.length > 0) {
+            console.log(colors.red(`可用命令${availableCommands.join("、")}`));
+        }
     });
 
     // 必须放到最后， 相当于结束
