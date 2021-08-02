@@ -47,13 +47,13 @@ function registerCommand() {
     const program = new Command();
     program.name(Object.keys(pkg.bin)[0]).usage("command [options]").
     version(pkg.version).
-    option("-tp, --targetPath", "本地初始化init路径", "").
+    option("-tp, --targetPath <targetPath>", "本地初始化init路径", "").
     option("-d, --debug", "是否开启调试模式", false);
   
    
     program.command('init [projectName]').option("-f --force", "强制清空文件夹", false).action(exec)
 
-    program.on('option:debug', function(a,b,c){
+    program.on('option:debug', function(){
         const opts = program.opts();
         if(opts.debug) {
             process.env.LOG_LEVEL = "verbose"
@@ -63,7 +63,7 @@ function registerCommand() {
         log.level = "verbose";
     })
 
-    program.on('option:targetPath', function(){
+    program.on('option:targetPath', function(a){
         const opts = program.opts();
         process.env.CLI_TARGET_PATH = opts.targetPath;
     })

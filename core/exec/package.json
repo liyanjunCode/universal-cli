@@ -27,6 +27,7 @@
     "url": "https://github.com/liyanjunCode/universal-cli/issues"
   },
   "devDependencies": {
-    "@universal-cli/package": "file:../../utils/package"
+    "@universal-cli/package": "file:../../utils/package",
+    "@universal-cli/log": "file:../../utils/log"
   }
 }

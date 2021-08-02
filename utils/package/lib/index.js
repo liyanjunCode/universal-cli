@@ -1,7 +1,14 @@
 'use strict';
 
-module.exports = package;
+module.exports = Package;
 
-function package() {
+class Package {
     // TODO
+    constructor(targetPath, storePath, packageName, packageVersion){
+        this.targetPath = targetPath;
+        this.storePath = storePath;
+        this.packageName = packageName;
+        this.packageVersion = packageVersion;
+    }
+    // 
 }

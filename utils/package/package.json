@@ -25,5 +25,8 @@
   },
   "bugs": {
     "url": "https://github.com/liyanjunCode/universal-cli/issues"
+  },
+  "devDependencies": {
+    "npminstall": "^4.11.0"
   }
 }
