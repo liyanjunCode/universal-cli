@@ -1,4 +1,4 @@
-'use strict';
+// 'use strict';
 const path = require("path");
 const log = require("@universal-cli/log");
 const Package = require("@universal-cli/package");
@@ -26,12 +26,16 @@ function exec(name, options, command) {
     if(!targetPath) {
         targetPath = path.resolve(homePath, catchDir);
         storePath = path.resolve(targetPath, 'node_moudles');
-        new Package({
+        console.log(Package, "PackagePackage")
+        let package = new Package({
             storePath,
             targetPath,
             packageName,
             packageVersion
-        })
+        });
+        if(package.exists()){
+            console.log(1111111)
+        }
     } else {
         // 执行本地代码的初始化
     }
