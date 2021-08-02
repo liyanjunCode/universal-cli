@@ -1,6 +1,6 @@
 {
   "name": "@universal-cli/exec",
-  "version": "0.1.12",
+  "version": "0.2.0-alpha.0",
   "description": "> TODO: description",
   "author": "liyanjun <254948133@qq.com>",
   "homepage": "https://github.com/liyanjunCode/universal-cli#readme",
@@ -27,7 +27,7 @@
     "url": "https://github.com/liyanjunCode/universal-cli/issues"
   },
   "devDependencies": {
-    "@universal-cli/package": "file:../../utils/package",
-    "@universal-cli/log": "file:../../utils/log"
+    "@universal-cli/log": "file:../../utils/log",
+    "@universal-cli/package": "file:../../utils/package"
   }
 }

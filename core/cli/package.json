@@ -1,6 +1,6 @@
 {
   "name": "@universal-cli/core",
-  "version": "0.1.12",
+  "version": "0.2.0-alpha.0",
   "description": "脚手架核心模块",
   "author": "liyanjun <254948133@qq.com>",
   "homepage": "",
@@ -29,9 +29,9 @@
   },
   "dependencies": {
     "@universal-cli/commands": "^0.1.12",
-    "@universal-cli/get-npm-info": "^0.1.12",
-    "@universal-cli/log": "^0.1.12",
     "@universal-cli/exec": "file:../exec",
+    "@universal-cli/get-npm-info": "^0.1.12",
+    "@universal-cli/log": "^0.2.0-alpha.0",
     "colors": "^1.4.0",
     "commander": "^8.0.0",
     "dotenv": "^10.0.0",
