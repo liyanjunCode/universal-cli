@@ -23,20 +23,31 @@ function exec(name, options, command) {
     log.verbose(homePath, "homePath");
     // targetPath用于判断是否执行本地代码
     // 如果targetPath不存在则去下载或更新package
+    let package;
     if(!targetPath) {
         targetPath = path.resolve(homePath, catchDir);
         storePath = path.resolve(targetPath, 'node_moudles');
-        console.log(Package, "PackagePackage")
-        let package = new Package({
+        package = new Package({
             storePath,
             targetPath,
             packageName,
             packageVersion
         });
-        if(package.exists()){
-            console.log(1111111)
+        if(!package.exists()){
+            //不存在下载 
+            package.install();
+        } else {
+            // 存在更新
+            package.update();
         }
     } else {
         // 执行本地代码的初始化
+        package = new Package({
+            storePath,
+            targetPath,
+            packageName,
+            packageVersion
+        });
     }
+    //  判断入口文件是否存在
 }

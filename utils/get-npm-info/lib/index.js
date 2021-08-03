@@ -12,11 +12,11 @@ async function getNpmInfo(pkgName, origin) {
 }
 
 function getNpmRegister(pkgName, origin) {
-    return origin ? origin + "/" + pkgName :  getDefautRegister(pkgName);
+    return (origin ? origin + "/"  :  getDefautRegister()) + pkgName;
 }
 // 获取默认注册信息
-function getDefautRegister(pkgName, isOrigin) {
-    return (isOrigin ? "https://registry.npmjs.org/" : "https://registry.npm.taobao.org/") + pkgName
+function getDefautRegister(isOrigin) {
+    return isOrigin ? "https://registry.npmjs.org/" : "https://registry.npm.taobao.org/"
 }
 
 async function getNpm(register) {
@@ -40,9 +40,16 @@ function getFilterFile(versions, baseVersion) {
    .filter((version) => semver.satisfies(version, `>${baseVersion}`))
    .sort((a, b) => (semver.gt(a, b) ? -1 : 1));
 }
+async function getNpmLatestVersion(pkgName){
+    const npmInfo = await this.getNpmInfo(pkgName)
+    const versions = this.getVersions(npmInfo.versions);
+    return this.getLatestVersion(versions);
+}
 module.exports = {
   getNpmInfo,
   getVersions,
   getLatestVersion,
   getFilterFile,
+  getDefautRegister,
+  getNpmLatestVersion
 };
