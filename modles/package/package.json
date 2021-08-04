@@ -1,5 +1,5 @@
 {
-  "name": "@universal-cli/exec",
+  "name": "@universal-cli/package",
   "version": "0.2.0-alpha.0",
   "description": "> TODO: description",
   "author": "liyanjun <254948133@qq.com>",
@@ -26,8 +26,12 @@
   "bugs": {
     "url": "https://github.com/liyanjunCode/universal-cli/issues"
   },
-  "devDependencies": {
-    "@universal-cli/log": "file:../../utils/log",
-    "@universal-cli/package": "file:../../modles/package"
+  "dependencies": {
+    "pkg-dir": "^5.0.0",
+    "npminstall": "^4.11.0",
+    "path-exists": "^4.0.0",
+    "@universal-cli/get-npm-info": "file:../../utils/get-npm-info",
+    "fs-extra": "^9.0.1",
+    "@universal-cli/formatepath": "file:../../utils/formatePath"
   }
 }

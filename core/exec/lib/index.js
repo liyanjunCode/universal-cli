@@ -11,7 +11,7 @@ const commandInit = {
 }
 // 缓存依赖的目录
 const catchDir = "dependences";
-function exec(name, options, command) {
+async function exec(name, options, command) {
     // TODO
     let targetPath = process.env.CLI_TARGET_PATH;
     let homePath = process.env.CLI_HOME_PATH;
@@ -26,7 +26,7 @@ function exec(name, options, command) {
     let package;
     if(!targetPath) {
         targetPath = path.resolve(homePath, catchDir);
-        storePath = path.resolve(targetPath, 'node_moudles');
+        storePath = path.resolve(targetPath, 'node_modules');
         package = new Package({
             storePath,
             targetPath,
@@ -35,10 +35,10 @@ function exec(name, options, command) {
         });
         if(!package.exists()){
             //不存在下载 
-            package.install();
+            await package.install();
         } else {
             // 存在更新
-            package.update();
+            await package.update();
         }
     } else {
         // 执行本地代码的初始化
@@ -49,5 +49,9 @@ function exec(name, options, command) {
             packageVersion
         });
     }
-    //  判断入口文件是否存在
+    //  判断入口文件是否存在, 就动态生成命令并用子线程执行
+    const rootPath = package.getRootfilePath();
+    if(rootPath) {
+
+    }
 }

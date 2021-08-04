@@ -1,5 +1,5 @@
 {
-  "name": "@universal-cli/package",
+  "name": "@universal-cli/formatepath",
   "version": "0.2.0-alpha.0",
   "description": "> TODO: description",
   "author": "liyanjun <254948133@qq.com>",
@@ -25,10 +25,5 @@
   },
   "bugs": {
     "url": "https://github.com/liyanjunCode/universal-cli/issues"
-  },
-  "devDependencies": {
-    "npminstall": "^4.11.0",
-    "path-exists": "^4.0.0",
-    "@universal-cli/get-npm-info":"file:../get-npm-info"
   }
 }

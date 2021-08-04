@@ -41,9 +41,9 @@ function getFilterFile(versions, baseVersion) {
    .sort((a, b) => (semver.gt(a, b) ? -1 : 1));
 }
 async function getNpmLatestVersion(pkgName){
-    const npmInfo = await this.getNpmInfo(pkgName)
-    const versions = this.getVersions(npmInfo.versions);
-    return this.getLatestVersion(versions);
+    const npmInfo = await getNpmInfo(pkgName)
+    const versions = getVersions(npmInfo.versions);
+    return getLatestVersion(versions);
 }
 module.exports = {
   getNpmInfo,
