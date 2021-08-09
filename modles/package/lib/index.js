@@ -7,7 +7,6 @@ const fse = require("fs-extra");
 const formatepath = require("@universal-cli/formatepath");
 const { getDefautRegister, getNpmLatestVersion } = require("@universal-cli/get-npm-info");
 
-
 class Package {
     // TODO
     constructor({targetPath, storePath, packageName, packageVersion}){
@@ -88,7 +87,7 @@ class Package {
                 const pkg = require(path.resolve(dir, "./package.json"));
                 if(pkg && pkg.main) {
                     // 兼容mac和window格式化路径
-                    return formatePath(path.resolve(dir, pkg.main));
+                    return formatepath(path.resolve(dir, pkg.main));
                 }
             }
             return null;
