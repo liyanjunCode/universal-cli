@@ -25,5 +25,13 @@
   },
   "bugs": {
     "url": "https://github.com/liyanjunCode/universal-cli/issues"
+  },
+  "dependencies": {
+    "@universal-cli/log": "file:../../utils/log",
+    "@universal-cli/Commander": "file:../../modles/commander",
+    "colors": "^1.4.0",
+    "fs-extra": "^10.0.0",
+    "inquirer": "^8.1.2",
+    "semver": "^7.3.5"
   }
 }

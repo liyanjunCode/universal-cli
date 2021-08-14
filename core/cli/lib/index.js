@@ -16,7 +16,6 @@ const {
   getLatestVersion,
   getFilterFile,
 } = require("@universal-cli/get-npm-info");
-const { Console } = require("console");
 
 function core() {
     // 1. 脚手架环境准备
@@ -35,7 +34,7 @@ function core() {
 //  脚手架环境准备工作
 function prepare(){
     checkUniVersion();
-    checkNodeVersion();
+    // checkNodeVersion();
     checkUserRoot();
     checkUserHome();
     checkArgs();
@@ -84,11 +83,11 @@ function checkUniVersion() {
     log.info( "脚手架版本为", pkg.version);
 }
 // 查看node版本
-function checkNodeVersion(){
-    if(semver.gt(NODE_LOWER_VERSION, process.version)) {
-        throw new Error(colors.green("你当前的node版本为") + colors.red(process.version) + "," + colors.green("脚手架最低node版本要求为") + colors.red(NODE_LOWER_VERSION) + "," +  colors.green("请升级node"))
-    }
-}
+// function checkNodeVersion(){
+//     if(semver.gt(NODE_LOWER_VERSION, process.version)) {
+//         throw new Error(colors.green("你当前的node版本为") + colors.red(process.version) + "," + colors.green("脚手架最低node版本要求为") + colors.red(NODE_LOWER_VERSION) + "," +  colors.green("请升级node"))
+//     }
+// }
 
 // 查看用户权限并更改， 防止用户使用管理员权限导致不兼容
 function checkUserRoot(){
